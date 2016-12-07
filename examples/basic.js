@@ -1,7 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import injectSheet from 'react-jss';
 import Grid from '../src/index';
 import GridItem from '../src/grid-item';
+
+const styles = {
+  draggable: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    height: 30,
+    width: 30,
+    cursor: 'pointer',
+    background: 'red',
+  },
+  resizable: {
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    height: 30,
+    width: 30,
+    cursor: 'pointer',
+    background: 'red',
+  },
+};
 
 class BasicDemo extends Component {
   constructor(props) {
@@ -21,6 +43,7 @@ class BasicDemo extends Component {
   }
 
   render() {
+    const { sheet: { classes } } = this.props;
     const { boxes } = this.state;
     return (
       <Grid
@@ -36,11 +59,11 @@ class BasicDemo extends Component {
           <GridItem
             x={box.x} y={box.y} w={box.w} h={box.h} key={index}
             isDraggable isResizable
-            draggableClassName={'handle'}
-            resizableClassName={'resize'}
+            draggableClassName={classes.draggable}
+            resizableClassName={classes.resizable}
           >
-            <div className="handle" />
-            <div className="resize" />
+            <div className={classes.draggable} />
+            <div className={classes.resizable} />
             Box {index}
           </GridItem>,
         )}
@@ -49,4 +72,10 @@ class BasicDemo extends Component {
   }
 }
 
-ReactDOM.render(<BasicDemo />, document.getElementById('demo'));
+BasicDemo.propTypes = {
+  sheet: PropTypes.object.isRequired,
+};
+
+const StyledBasicDemo = injectSheet(styles)(BasicDemo);
+
+ReactDOM.render(<StyledBasicDemo />, document.getElementById('demo'));
