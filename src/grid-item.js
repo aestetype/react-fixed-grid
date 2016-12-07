@@ -131,23 +131,37 @@ class GridItem extends Component {
 }
 
 GridItem.propTypes = {
+  // Index of GridItem in children Grid
   index: PropTypes.number,
-  margin: PropTypes.number,
+  // Gutter size between GridItem
   gutter: PropTypes.number,
+  // Global margin of Grid
+  margin: PropTypes.number,
+  // Css class applyed to the GridItem element
   className: PropTypes.string,
+  // Css class for draggable event
   draggableClassName: PropTypes.string,
+  // Css class for resizable event
   resizableClassName: PropTypes.string,
+  // Function caled when dragging
   onDrag: PropTypes.func,
+  // X position on the Grid
   x: PropTypes.number.isRequired,
+  // Y position on the Grid
   y: PropTypes.number.isRequired,
+  // Width of the GridItem
   w: PropTypes.number.isRequired,
+  // Height of the GridItem
   h: PropTypes.number.isRequired,
+  // Height of a row in Grid
   rowHeight: PropTypes.number,
+  // Width of a col in Grid
   colWidth: PropTypes.number,
-  // columns: PropTypes.number,
-  // rows: PropTypes.number,
+  // Is GridItem draggable
   isDraggable: PropTypes.bool,
+  // Is GridItem resizable
   isResizable: PropTypes.bool,
+  // Children displayed in GridItem
   children: PropTypes.node,
 };
 
