@@ -1,0 +1,4 @@
+*.log
+node_modules
+lib
+examples/app.bundle.js
