@@ -17,7 +17,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Grid, GridItem } from 'react-fixed-grid';
 
-class Basic extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
