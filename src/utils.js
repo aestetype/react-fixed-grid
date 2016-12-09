@@ -9,6 +9,10 @@ export function calcPosition({ x, y, w, h, rowHeight, colWidth, margin, gutter }
     pos.width += state.resizing.width;
     pos.height += state.resizing.height;
   }
+  if (state && state.dragging) {
+    pos.top += state.dragging.top;
+    pos.left += state.dragging.left;
+  }
   return pos;
 }
 

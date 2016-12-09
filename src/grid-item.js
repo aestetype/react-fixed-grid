@@ -80,9 +80,6 @@ class GridItem extends Component {
       style.background = 'green';
       style.zIndex = 999;
     }
-    if (this.state.dragging) {
-      style.transform = `translate(${this.state.dragging.left}px, ${this.state.dragging.top}px)`;
-    }
     return style;
   }
 
@@ -131,37 +128,69 @@ class GridItem extends Component {
 }
 
 GridItem.propTypes = {
-  // Index of GridItem in children Grid
+  /**
+   * Index of GridItem in children Grid
+   */
   index: PropTypes.number,
-  // Gutter size between GridItem
+  /**
+   * Gutter size between each GridItem
+   */
   gutter: PropTypes.number,
-  // Global margin of Grid
+  /**
+   * Global margin of Grid
+   */
   margin: PropTypes.number,
-  // Css class applyed to the GridItem element
+  /**
+   * Css class applyed to the GridItem element
+   */
   className: PropTypes.string,
-  // Css class for draggable event
+  /**
+   * Css class for binding draggable event
+   */
   draggableClassName: PropTypes.string,
-  // Css class for resizable event
+  /**
+   * Css class for binding resizable event
+   */
   resizableClassName: PropTypes.string,
-  // Function caled when dragging
+  /**
+   * Function caled when dragging
+   */
   onDrag: PropTypes.func,
-  // X position on the Grid
+  /**
+   * X position on the Grid
+   */
   x: PropTypes.number.isRequired,
-  // Y position on the Grid
+  /**
+   * Y position on the Grid
+   */
   y: PropTypes.number.isRequired,
-  // Width of the GridItem
+  /**
+   * Width of the GridItem
+   */
   w: PropTypes.number.isRequired,
-  // Height of the GridItem
+  /**
+   * Height of the GridItem
+   */
   h: PropTypes.number.isRequired,
-  // Height of a row in Grid
+  /**
+   * Height of a row in Grid
+   */
   rowHeight: PropTypes.number,
-  // Width of a col in Grid
+  /**
+   * Width of a col in Grid
+   */
   colWidth: PropTypes.number,
-  // Is GridItem draggable
+  /**
+   * Is GridItem draggable
+   */
   isDraggable: PropTypes.bool,
-  // Is GridItem resizable
+  /**
+   * Is GridItem resizable
+   */
   isResizable: PropTypes.bool,
-  // Children displayed in GridItem
+  /**
+   * Children displayed in GridItem
+   */
   children: PropTypes.node,
 };
 

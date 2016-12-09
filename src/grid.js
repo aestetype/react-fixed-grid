@@ -8,11 +8,11 @@ const styles = {
     backgroundColor: '#eee',
   },
   placeholder: {
-    backgroundColor: 'yellow',
-    opacity: '0.7',
+    backgroundColor: 'rgb(216, 226, 220)',
     transition: 'all 0.4s',
   },
   placeholderInvalid: {
+    opacity: '0.7',
     backgroundColor: 'red',
   },
   gridItem: {
@@ -34,11 +34,16 @@ class Grid extends Component {
   }
 
   onDrag = (handlerName, index, x, y, w, h) => {
+    const { placeholder } = this.state;
     switch (handlerName) {
       case 'onDragStart':
       case 'onDrag':
       case 'onResizeStart':
       case 'onResize':
+        if (placeholder && placeholder.x === x && placeholder.y === y &&
+          placeholder.w === w && placeholder.h === h) {
+          break;
+        }
         this.setState({ placeholder: { x, y, w, h } });
         break;
       case 'onDragStop':
@@ -114,7 +119,8 @@ class Grid extends Component {
           columns,
           rowHeight,
           colWidth,
-          className: classes.gridItem,
+          className: child.props.className ?
+            `${child.props.className} ${classes.gridItem}` : classes.gridItem,
           onDrag: this.onDrag,
         }))}
         {this.renderPlaceholder(rowHeight, colWidth)}
@@ -124,22 +130,38 @@ class Grid extends Component {
 }
 
 Grid.propTypes = {
-  // Gutter size between GridItem
+  /**
+   * Gutter size between GridItem
+   */
   gutter: PropTypes.number,
-  // Global margin of Grid
+  /**
+   * Global margin of Grid
+   */
   margin: PropTypes.number,
-  // Number of rows of the Grid
+  /**
+   * Number of rows of the Grid
+   */
   rows: PropTypes.number.isRequired,
-  // Number of columns of the Grid
+  /**
+   * Number of columns of the Grid
+   */
   columns: PropTypes.number.isRequired,
-  // Width of the Grid
+  /**
+   * Width of the Grid
+   */
   width: PropTypes.number.isRequired,
-  // Height of the Grid
+  /**
+   * Height of the Grid
+   */
   height: PropTypes.number.isRequired,
-  // Children in grid
+  /**
+   * Children in grid
+   */
   children: PropTypes.node,
   sheet: PropTypes.object.isRequired,
-  // Function called when a item change in the grid
+  /**
+   * Function called when a item change in the grid
+   */
   onItemChange: PropTypes.func,
 };
 

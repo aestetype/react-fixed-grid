@@ -1,27 +1,35 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 import injectSheet from 'react-jss';
 import EventListener from 'react-event-listener';
 import { Grid, GridItem } from '../src/index';
 
 const styles = {
-  draggable: {
+  action: {
     position: 'absolute',
+    height: 30,
+    width: 30,
+    cursor: 'pointer',
+    lineHeight: '30px',
+    textAlign: 'center',
+  },
+  draggable: {
     top: 0,
     left: 0,
-    height: 30,
-    width: 30,
-    cursor: 'pointer',
-    background: 'red',
   },
   resizable: {
-    position: 'absolute',
     right: 0,
     bottom: 0,
-    height: 30,
-    width: 30,
-    cursor: 'pointer',
-    background: 'red',
+  },
+  gridItem: {
+    backgroundColor: '#6174AF !important',
+  },
+  gridItemContent: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 };
 
@@ -76,12 +84,19 @@ class BasicDemo extends Component {
             <GridItem
               x={box.x} y={box.y} w={box.w} h={box.h} key={index}
               isDraggable isResizable
+              className={classes.gridItem}
               draggableClassName={classes.draggable}
               resizableClassName={classes.resizable}
             >
-              <div className={classes.draggable} />
-              <div className={classes.resizable} />
-              Box {index}
+              <div className={classes.gridItemContent}>
+                <div className={classNames(classes.action, classes.draggable)}>
+                  <i className="material-icons">drag_handle</i>
+                </div>
+                <div className={classNames(classes.action, classes.resizable)}>
+                  <i className="material-icons">open_with</i>
+                </div>
+                Box {index}
+              </div>
             </GridItem>,
           )}
         </Grid>
