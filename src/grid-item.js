@@ -133,10 +133,12 @@ GridItem.propTypes = {
    */
   index: PropTypes.number,
   /**
+   * @private
    * Gutter size between each GridItem
    */
   gutter: PropTypes.number,
   /**
+   * @private
    * Global margin of Grid
    */
   margin: PropTypes.number,

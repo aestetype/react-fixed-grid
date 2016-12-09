@@ -25,6 +25,9 @@ const styles = {
   },
 };
 
+/**
+ * Grid were GridItem will be rendered
+ */
 class Grid extends Component {
   constructor(props) {
     super(props);
