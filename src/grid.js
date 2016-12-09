@@ -6,8 +6,6 @@ import GridItem from './grid-item';
 const styles = {
   root: {
     backgroundColor: '#eee',
-    height: 700,
-    width: 1600,
   },
   placeholder: {
     backgroundColor: 'yellow',
@@ -106,7 +104,7 @@ class Grid extends Component {
     const colWidth = columnsSum / columns;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.root} style={{ width, height }}>
         {this.renderGrid({ rowHeight, colWidth })}
         {children.map((child, index) => React.cloneElement(child, {
           index,
