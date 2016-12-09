@@ -1,7 +1,7 @@
 {
   "name": "react-fixed-grid",
   "version": "0.0.0",
-  "description": "",
+  "description": "Create a fixed grid system for react",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint src",

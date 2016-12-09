@@ -1,6 +1,6 @@
 # react-fixed-grid
 
-Create fixed grid for react.
+Create a fixed grid system for react.
 
 ## Installation
 
