@@ -1,6 +1,6 @@
 {
   "name": "react-fixed-grid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Create a fixed grid system for react",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,6 @@
     "build:docs": "styleguidist build",
     "build:examples": "browserify examples/basic.js -o examples/app.bundle.js -t [ babelify --presets [ es2015 react stage-1 ] ]",
     "docs:start": "styleguidist server",
-    "test": "npm run lint",
     "prepublishOnly": "npm run build"
   },
   "repository": {
