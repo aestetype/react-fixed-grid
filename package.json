@@ -36,9 +36,9 @@
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
     "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.8.0",
     "react": "^15.4.1",
     "react-docgen": "^2.12.1",
@@ -50,6 +50,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "react-draggable": "^2.2.3",
-    "react-jss": "^4.2.0"
+    "react-jss": "^5.2.0"
   }
 }

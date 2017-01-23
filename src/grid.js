@@ -161,7 +161,7 @@ Grid.propTypes = {
   /**
    * Children in grid
    */
-  children: PropTypes.node,
+  children: PropTypes.node, // eslint-disable-line
   sheet: PropTypes.object.isRequired,
   /**
    * Should show the grid
@@ -170,7 +170,7 @@ Grid.propTypes = {
   /**
    * Function called when a item change in the grid
    */
-  onItemChange: PropTypes.func,
+  onItemChange: PropTypes.func, // eslint-disable-line
 };
 
 Grid.defaultProps = {

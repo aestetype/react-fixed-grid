@@ -113,10 +113,11 @@ class GridItem extends Component {
     const {
       children, isDraggable, isResizable, className,
       x, y, w, h, rowHeight, colWidth, margin, gutter,
+      ...props
     } = this.props;
     const pos = calcPosition({ x, y, w, h, rowHeight, colWidth, margin, gutter }, this.state);
     const style = this.getStyles(pos);
-    let child = (<div style={style} className={className}>{children}</div>);
+    let child = (<div style={style} className={className} {...props}>{children}</div>);
     if (isResizable) {
       child = this.renderResizable(child);
     }
@@ -145,7 +146,7 @@ GridItem.propTypes = {
   /**
    * Css class applyed to the GridItem element
    */
-  className: PropTypes.string,
+  className: PropTypes.string, // eslint-disable-line
   /**
    * Css class for binding draggable event
    */
@@ -157,7 +158,7 @@ GridItem.propTypes = {
   /**
    * Function caled when dragging
    */
-  onDrag: PropTypes.func,
+  onDrag: PropTypes.func, // eslint-disable-line
   /**
    * X position on the Grid
    */
@@ -193,7 +194,7 @@ GridItem.propTypes = {
   /**
    * Children displayed in GridItem
    */
-  children: PropTypes.node,
+  children: PropTypes.node, // eslint-disable-line
 };
 
 GridItem.defaultProps = {
@@ -203,6 +204,11 @@ GridItem.defaultProps = {
   rows: 1,
   isDraggable: false,
   isResizable: false,
+  index: 0,
+  rowHeight: 0,
+  colWidth: 0,
+  draggableClassName: 'draggable',
+  resizableClassName: 'resizable',
 };
 
 export default GridItem;
