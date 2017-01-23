@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes, cloneElement } from 'react';
 import injectSheet from 'react-jss';
 import classNames from 'classnames';
 import GridItem from './grid-item';
@@ -115,7 +115,7 @@ class Grid extends Component {
     return (
       <div className={classes.root} style={{ width, height }}>
         {this.renderGrid({ rowHeight, colWidth })}
-        {children.map((child, index) => React.cloneElement(child, {
+        {children.map((child, index) => cloneElement(child, {
           index,
           margin,
           gutter,
