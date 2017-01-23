@@ -80,7 +80,8 @@ class Grid extends Component {
   }
 
   renderGrid({ rowHeight, colWidth }) {
-    const { sheet: { classes }, rows, columns, margin, gutter } = this.props;
+    const { sheet: { classes }, rows, columns, margin, gutter, showGrid } = this.props;
+    if (!showGrid) return null;
     const grid = [];
     for (let row = 0; row < rows; row += 1) {
       for (let col = 0; col < columns; col += 1) {
@@ -163,6 +164,10 @@ Grid.propTypes = {
   children: PropTypes.node,
   sheet: PropTypes.object.isRequired,
   /**
+   * Should show the grid
+   */
+  showGrid: PropTypes.bool,
+  /**
    * Function called when a item change in the grid
    */
   onItemChange: PropTypes.func,
@@ -171,6 +176,7 @@ Grid.propTypes = {
 Grid.defaultProps = {
   gutter: 0,
   margin: 0,
+  showGrid: false,
 };
 
 export default injectSheet(styles)(Grid);
