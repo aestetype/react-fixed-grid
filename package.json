@@ -4,7 +4,7 @@
   "description": "Create a fixed grid system for react",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run lint && npm run build",
     "lint": "eslint src",
     "build": "babel src --out-dir lib",
     "build:docs": "styleguidist build",
