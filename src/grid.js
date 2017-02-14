@@ -6,6 +6,7 @@ import GridItem from './grid-item';
 const styles = {
   root: {
     backgroundColor: '#eee',
+    position: 'relative',
   },
   placeholder: {
     backgroundColor: 'rgb(216, 226, 220)',
