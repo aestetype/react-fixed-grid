@@ -115,7 +115,7 @@ class Grid extends Component {
     return (
       <div className={classes.root} style={{ width, height }}>
         {this.renderGrid({ rowHeight, colWidth })}
-        {children.map((child, index) => cloneElement(child, {
+        {React.Children.toArray(children).map((child, index) => cloneElement(child, {
           index,
           margin,
           gutter,
