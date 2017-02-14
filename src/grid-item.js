@@ -113,6 +113,7 @@ class GridItem extends Component {
     const {
       children, isDraggable, isResizable, className,
       x, y, w, h, rowHeight, colWidth, margin, gutter,
+      draggableClassName, resizableClassName, columns, index, // eslint-disable-line
       ...props
     } = this.props;
     const pos = calcPosition({ x, y, w, h, rowHeight, colWidth, margin, gutter }, this.state);
