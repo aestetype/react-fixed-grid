@@ -5,7 +5,6 @@ import GridItem from './grid-item';
 
 const styles = {
   root: {
-    backgroundColor: '#eee',
     position: 'relative',
   },
   placeholder: {
@@ -17,8 +16,6 @@ const styles = {
     backgroundColor: 'red',
   },
   gridItem: {
-    backgroundColor: 'black',
-    color: 'white',
     transition: 'all 0.05s',
   },
   gridItemDefault: {
