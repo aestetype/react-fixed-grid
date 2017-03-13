@@ -1,6 +1,6 @@
 {
   "name": "react-fixed-grid",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Create a fixed grid system for react",
   "main": "lib/index.js",
   "scripts": {
