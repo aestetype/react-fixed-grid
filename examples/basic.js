@@ -22,6 +22,9 @@ const styles = {
     right: 0,
     bottom: 0,
   },
+  grid: {
+    backgroundColor: '#0088B8',
+  },
   gridItem: {
     backgroundColor: '#6174AF !important',
   },
@@ -30,6 +33,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  placeholder: {
+    opacity: 0.9,
   },
 };
 
@@ -79,6 +85,9 @@ class BasicDemo extends Component {
           height={height}
           margin={10}
           gutter={5}
+          showGrid
+          className={classes.grid}
+          placeholderClassName={classes.placeholder}
         >
           {boxes.map((box, index) =>
             <GridItem

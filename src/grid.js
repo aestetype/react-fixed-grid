@@ -60,14 +60,14 @@ class Grid extends Component {
   }
 
   renderPlaceholder(rowHeight, colWidth) {
-    const { sheet: { classes }, columns, rows, margin, gutter } = this.props;
+    const { sheet: { classes }, columns, rows, margin, gutter, placeholderClassName } = this.props;
     const { placeholder } = this.state;
     if (!placeholder) return null;
     return (
       <GridItem
         className={classNames(classes.placeholder, {
           [classes.placeholderInvalid]: placeholder.invalid,
-        })}
+        }, placeholderClassName)}
         columns={columns} rows={rows}
         rowHeight={rowHeight} colWidth={colWidth}
         margin={margin} gutter={gutter}
@@ -100,7 +100,7 @@ class Grid extends Component {
 
   render() {
     const { sheet: { classes }, children, margin, gutter,
-      rows, columns, height, width } = this.props;
+      rows, columns, height, width, className } = this.props;
 
     const rowGuttersSum = gutter * (rows - 1);
     const rowColumnsSum = height - rowGuttersSum - (2 * margin);
@@ -111,7 +111,7 @@ class Grid extends Component {
     const colWidth = columnsSum / columns;
 
     return (
-      <div className={classes.root} style={{ width, height }}>
+      <div className={classNames(classes.root, className)} style={{ width, height }}>
         {this.renderGrid({ rowHeight, colWidth })}
         {React.Children.toArray(children).map((child, index) => cloneElement(child, {
           index,
@@ -132,6 +132,14 @@ class Grid extends Component {
 }
 
 Grid.propTypes = {
+  /**
+   * Css class applyed to the Grid element
+   */
+  className: PropTypes.string,
+  /**
+   * Css class applyed to the Grid element
+   */
+  placeholderClassName: PropTypes.string,
   /**
    * Gutter size between GridItem
    */
@@ -172,6 +180,8 @@ Grid.propTypes = {
 };
 
 Grid.defaultProps = {
+  className: null,
+  placeholderClassName: null,
   gutter: 0,
   margin: 0,
   showGrid: false,
