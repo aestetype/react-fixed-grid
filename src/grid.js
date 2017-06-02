@@ -61,7 +61,7 @@ class Grid extends Component {
   }
 
   renderPlaceholder(rowHeight, colWidth) {
-    const { sheet: { classes }, columns, rows, margin, gutter, placeholderClassName } = this.props;
+    const { classes, columns, rows, margin, gutter, placeholderClassName } = this.props;
     const { placeholder } = this.state;
     if (!placeholder) return null;
     return (
@@ -79,7 +79,7 @@ class Grid extends Component {
   }
 
   renderGrid({ rowHeight, colWidth }) {
-    const { sheet: { classes }, rows, columns, margin, gutter, showGrid } = this.props;
+    const { classes, rows, columns, margin, gutter, showGrid } = this.props;
     if (!showGrid) return null;
     const grid = [];
     for (let row = 0; row < rows; row += 1) {
@@ -100,7 +100,7 @@ class Grid extends Component {
   }
 
   render() {
-    const { sheet: { classes }, children, margin, gutter,
+    const { classes, children, margin, gutter,
       rows, columns, height, width, className } = this.props;
 
     const rowGuttersSum = gutter * (rows - 1);
@@ -169,7 +169,7 @@ Grid.propTypes = {
    * Children in grid
    */
   children: PropTypes.node, // eslint-disable-line
-  sheet: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
   /**
    * Should show the grid
    */

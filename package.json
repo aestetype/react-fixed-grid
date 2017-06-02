@@ -35,7 +35,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "babelify": "^7.3.0",
-    "browserify": "^14.3.0",
+    "browserify": "^14.4.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
@@ -46,13 +46,13 @@
     "react-dom": "^15.4.1",
     "react-event-listener": "^0.4.5",
     "react-styleguidist": "^4.4.1",
-    "webpack": "^2.4.1",
+    "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
-    "react-draggable": "^2.2.4",
-    "react-jss": "^5.3.0"
+    "prop-types": "^15.5.10",
+    "react-draggable": "^2.2.6",
+    "react-jss": "^6.1.1"
   }
 }
