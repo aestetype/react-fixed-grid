@@ -2,7 +2,7 @@
 
 Create a fixed grid system for react.
 
-[![Build Status](https://travis-ci.org/Aestetype/react-fixed-grid.svg?branch=master)](https://travis-ci.org/Aestetype/react-fixed-grid)
+[![Build Status](https://travis-ci.org/aestetype/react-fixed-grid.svg?branch=master)](https://travis-ci.org/aestetype/react-fixed-grid)
 
 ## Installation
 
