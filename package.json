@@ -1,6 +1,6 @@
 {
   "name": "@aestetype/react-fixed-grid",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Create a fixed grid system for react",
   "main": "lib/index.js",
   "scripts": {
