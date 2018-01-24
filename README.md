@@ -6,16 +6,16 @@ Create a fixed grid system for react.
 
 ## Installation
 
-With npm: `npm install react-fixed-grid --save`
+With npm: `npm install @aestetype/react-fixed-grid --save`
 
-Or with yarn: `yarn add react-fixed-grid`
+Or with yarn: `yarn add @aestetype/react-fixed-grid`
 
 ## Usage
 
 ```javascript
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Grid, GridItem } from 'react-fixed-grid';
+import { Grid, GridItem } from '@aestetype/react-fixed-grid';
 
 class App extends Component {
   constructor(props) {
