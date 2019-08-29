@@ -47,7 +47,7 @@
     "react-event-listener": "^0.4.5",
     "react-styleguidist": "^4.4.1",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
